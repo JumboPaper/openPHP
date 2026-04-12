@@ -28,131 +28,226 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(index));
-            this.tb_caminho = new System.Windows.Forms.TextBox();
-            this.bt_abrir = new System.Windows.Forms.Button();
-            this.bt_limpar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.smi_arquivos = new System.Windows.Forms.ToolStripMenuItem();
-            this.smi_select = new System.Windows.Forms.ToolStripMenuItem();
-            this.smi_abrirCom = new System.Windows.Forms.ToolStripMenuItem();
+            this.tb_path = new System.Windows.Forms.TextBox();
+            this.bt_execute = new System.Windows.Forms.Button();
+            this.bt_clear = new System.Windows.Forms.Button();
+            this.ms_topMenu = new System.Windows.Forms.MenuStrip();
+            this.smi_files = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_selectFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_openWith = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_notepad = new System.Windows.Forms.ToolStripMenuItem();
-            this.smi_navegador = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_browser = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_preferences = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_display = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_darkMode = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.smi_light = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_dark = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_language = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_ptBR = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_enUSA = new System.Windows.Forms.ToolStripMenuItem();
+            this.bt_selectFile = new System.Windows.Forms.Button();
+            this.version = new System.Windows.Forms.Label();
+            this.lb_localHost = new System.Windows.Forms.Label();
+            this.timer_localhost = new System.Windows.Forms.Timer(this.components);
+            this.ms_topMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tb_caminho
+            // tb_path
             // 
-            this.tb_caminho.Location = new System.Drawing.Point(12, 40);
-            this.tb_caminho.Name = "tb_caminho";
-            this.tb_caminho.Size = new System.Drawing.Size(366, 20);
-            this.tb_caminho.TabIndex = 1;
+            this.tb_path.Location = new System.Drawing.Point(12, 30);
+            this.tb_path.Name = "tb_path";
+            this.tb_path.Size = new System.Drawing.Size(366, 20);
+            this.tb_path.TabIndex = 1;
             // 
-            // bt_abrir
+            // bt_execute
             // 
-            this.bt_abrir.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_abrir.Location = new System.Drawing.Point(12, 66);
-            this.bt_abrir.Name = "bt_abrir";
-            this.bt_abrir.Size = new System.Drawing.Size(85, 23);
-            this.bt_abrir.TabIndex = 2;
-            this.bt_abrir.Text = "Executar";
-            this.bt_abrir.UseVisualStyleBackColor = true;
-            this.bt_abrir.Click += new System.EventHandler(this.button2_Click);
+            this.bt_execute.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_execute.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_execute.ForeColor = System.Drawing.Color.White;
+            this.bt_execute.Location = new System.Drawing.Point(12, 56);
+            this.bt_execute.Name = "bt_execute";
+            this.bt_execute.Size = new System.Drawing.Size(85, 23);
+            this.bt_execute.TabIndex = 2;
+            this.bt_execute.Text = "Executar";
+            this.bt_execute.UseVisualStyleBackColor = false;
+            this.bt_execute.Click += new System.EventHandler(this.bt_execute_Click);
             // 
-            // bt_limpar
+            // bt_clear
             // 
-            this.bt_limpar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_limpar.Location = new System.Drawing.Point(103, 66);
-            this.bt_limpar.Name = "bt_limpar";
-            this.bt_limpar.Size = new System.Drawing.Size(85, 23);
-            this.bt_limpar.TabIndex = 4;
-            this.bt_limpar.Text = "Limpar";
-            this.bt_limpar.UseVisualStyleBackColor = true;
-            this.bt_limpar.Click += new System.EventHandler(this.button4_Click);
+            this.bt_clear.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_clear.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_clear.ForeColor = System.Drawing.Color.White;
+            this.bt_clear.Location = new System.Drawing.Point(103, 56);
+            this.bt_clear.Name = "bt_clear";
+            this.bt_clear.Size = new System.Drawing.Size(94, 23);
+            this.bt_clear.TabIndex = 4;
+            this.bt_clear.Text = "Limpar";
+            this.bt_clear.UseVisualStyleBackColor = false;
+            this.bt_clear.Click += new System.EventHandler(this.bt_clear_Click);
             // 
-            // menuStrip1
+            // ms_topMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smi_arquivos,
-            this.exibirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(440, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
+            this.ms_topMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_files,
+            this.smi_display});
+            this.ms_topMenu.Location = new System.Drawing.Point(0, 0);
+            this.ms_topMenu.Name = "ms_topMenu";
+            this.ms_topMenu.Size = new System.Drawing.Size(440, 24);
+            this.ms_topMenu.TabIndex = 5;
+            this.ms_topMenu.Text = "menuStrip1";
             // 
-            // smi_arquivos
+            // smi_files
             // 
-            this.smi_arquivos.BackColor = System.Drawing.SystemColors.Control;
-            this.smi_arquivos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smi_select,
-            this.smi_abrirCom});
-            this.smi_arquivos.Name = "smi_arquivos";
-            this.smi_arquivos.Size = new System.Drawing.Size(66, 20);
-            this.smi_arquivos.Text = "Arquivos";
-            this.smi_arquivos.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.smi_files.BackColor = System.Drawing.SystemColors.Control;
+            this.smi_files.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_selectFile,
+            this.smi_openWith,
+            this.smi_preferences});
+            this.smi_files.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smi_files.Name = "smi_files";
+            this.smi_files.Size = new System.Drawing.Size(66, 20);
+            this.smi_files.Text = "Arquivos";
+            this.smi_files.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // smi_select
+            // smi_selectFile
             // 
-            this.smi_select.Name = "smi_select";
-            this.smi_select.Size = new System.Drawing.Size(180, 22);
-            this.smi_select.Text = "Selecionar arquivo";
-            this.smi_select.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.smi_selectFile.Name = "smi_selectFile";
+            this.smi_selectFile.Size = new System.Drawing.Size(180, 22);
+            this.smi_selectFile.Text = "Novo Arquivo";
+            this.smi_selectFile.Click += new System.EventHandler(this.smi_selectFile_Click);
             // 
-            // smi_abrirCom
+            // smi_openWith
             // 
-            this.smi_abrirCom.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_openWith.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smi_notepad,
-            this.smi_navegador});
-            this.smi_abrirCom.Name = "smi_abrirCom";
-            this.smi_abrirCom.Size = new System.Drawing.Size(180, 22);
-            this.smi_abrirCom.Text = "Abrir com...";
-            this.smi_abrirCom.Click += new System.EventHandler(this.selecionarPastaToolStripMenuItem_Click);
+            this.smi_browser});
+            this.smi_openWith.Name = "smi_openWith";
+            this.smi_openWith.Size = new System.Drawing.Size(180, 22);
+            this.smi_openWith.Text = "Abrir com...";
+            this.smi_openWith.Click += new System.EventHandler(this.smi_openWith_Click);
             // 
             // smi_notepad
             // 
             this.smi_notepad.Name = "smi_notepad";
-            this.smi_notepad.Size = new System.Drawing.Size(180, 22);
-            this.smi_notepad.Text = "Notepad";
+            this.smi_notepad.Size = new System.Drawing.Size(154, 22);
+            this.smi_notepad.Text = "Bloco de Notas";
             this.smi_notepad.Click += new System.EventHandler(this.smi_notepad_Click);
             // 
-            // smi_navegador
+            // smi_browser
             // 
-            this.smi_navegador.Checked = true;
-            this.smi_navegador.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.smi_navegador.Name = "smi_navegador";
-            this.smi_navegador.Size = new System.Drawing.Size(180, 22);
-            this.smi_navegador.Text = "Navegador";
-            this.smi_navegador.Click += new System.EventHandler(this.smi_navegador_Click);
+            this.smi_browser.Checked = true;
+            this.smi_browser.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.smi_browser.Name = "smi_browser";
+            this.smi_browser.Size = new System.Drawing.Size(154, 22);
+            this.smi_browser.Text = "Navegador";
+            this.smi_browser.Click += new System.EventHandler(this.smi_browser_Click);
             // 
-            // button1
+            // smi_preferences
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(390, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.smi_preferences.Name = "smi_preferences";
+            this.smi_preferences.Size = new System.Drawing.Size(180, 22);
+            this.smi_preferences.Text = "Prefêrencias";
+            this.smi_preferences.Click += new System.EventHandler(this.smi_preferences_Click);
             // 
-            // exibirToolStripMenuItem
+            // smi_display
             // 
-            this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smi_darkMode});
-            this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.exibirToolStripMenuItem.Text = "Exibir";
+            this.smi_display.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_darkMode,
+            this.smi_language});
+            this.smi_display.Name = "smi_display";
+            this.smi_display.Size = new System.Drawing.Size(48, 20);
+            this.smi_display.Text = "Exibir";
             // 
             // smi_darkMode
             // 
+            this.smi_darkMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_light,
+            this.smi_dark});
+            this.smi_darkMode.ForeColor = System.Drawing.SystemColors.ControlText;
             this.smi_darkMode.Name = "smi_darkMode";
-            this.smi_darkMode.Size = new System.Drawing.Size(180, 22);
-            this.smi_darkMode.Text = "Modo Escuro ☼";
+            this.smi_darkMode.Size = new System.Drawing.Size(189, 22);
+            this.smi_darkMode.Text = "◐ Modo Escuro ";
             this.smi_darkMode.Click += new System.EventHandler(this.smi_darkMode_Click);
+            // 
+            // smi_light
+            // 
+            this.smi_light.Checked = true;
+            this.smi_light.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.smi_light.Name = "smi_light";
+            this.smi_light.Size = new System.Drawing.Size(124, 22);
+            this.smi_light.Text = "Claro ⚪";
+            this.smi_light.Click += new System.EventHandler(this.smi_light_Click);
+            // 
+            // smi_dark
+            // 
+            this.smi_dark.Name = "smi_dark";
+            this.smi_dark.Size = new System.Drawing.Size(124, 22);
+            this.smi_dark.Text = "Escuro ⚫️";
+            this.smi_dark.Click += new System.EventHandler(this.smi_dark_Click);
+            // 
+            // smi_language
+            // 
+            this.smi_language.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smi_ptBR,
+            this.smi_enUSA});
+            this.smi_language.Name = "smi_language";
+            this.smi_language.Size = new System.Drawing.Size(189, 22);
+            this.smi_language.Text = "🌎 Idioma / Language";
+            // 
+            // smi_ptBR
+            // 
+            this.smi_ptBR.Checked = true;
+            this.smi_ptBR.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.smi_ptBR.Name = "smi_ptBR";
+            this.smi_ptBR.Size = new System.Drawing.Size(116, 22);
+            this.smi_ptBR.Text = "PT-BR";
+            this.smi_ptBR.Click += new System.EventHandler(this.smi_ptBR_Click);
+            // 
+            // smi_enUSA
+            // 
+            this.smi_enUSA.Name = "smi_enUSA";
+            this.smi_enUSA.Size = new System.Drawing.Size(116, 22);
+            this.smi_enUSA.Text = "EN-USA";
+            this.smi_enUSA.Click += new System.EventHandler(this.smi_enUSA_Click);
+            // 
+            // bt_selectFile
+            // 
+            this.bt_selectFile.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_selectFile.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_selectFile.ForeColor = System.Drawing.Color.White;
+            this.bt_selectFile.Location = new System.Drawing.Point(383, 30);
+            this.bt_selectFile.Name = "bt_selectFile";
+            this.bt_selectFile.Size = new System.Drawing.Size(38, 23);
+            this.bt_selectFile.TabIndex = 6;
+            this.bt_selectFile.Text = "...";
+            this.bt_selectFile.UseVisualStyleBackColor = false;
+            this.bt_selectFile.Click += new System.EventHandler(this.smi_selectFile_Click);
+            // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.Location = new System.Drawing.Point(349, 92);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(91, 12);
+            this.version.TabIndex = 7;
+            this.version.Text = "version 1.0.0 (BETA)";
+            // 
+            // lb_localHost
+            // 
+            this.lb_localHost.AutoSize = true;
+            this.lb_localHost.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_localHost.Location = new System.Drawing.Point(-2, 92);
+            this.lb_localHost.Name = "lb_localHost";
+            this.lb_localHost.Size = new System.Drawing.Size(50, 12);
+            this.lb_localHost.TabIndex = 8;
+            this.lb_localHost.Text = "Apache: ";
+            // 
+            // timer_localhost
+            // 
+            this.timer_localhost.Tick += new System.EventHandler(this.timer_localhost_Tick);
             // 
             // index
             // 
@@ -160,40 +255,51 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(440, 104);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.bt_limpar);
-            this.Controls.Add(this.bt_abrir);
-            this.Controls.Add(this.tb_caminho);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lb_localHost);
+            this.Controls.Add(this.version);
+            this.Controls.Add(this.bt_selectFile);
+            this.Controls.Add(this.bt_clear);
+            this.Controls.Add(this.bt_execute);
+            this.Controls.Add(this.tb_path);
+            this.Controls.Add(this.ms_topMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.ms_topMenu;
             this.MaximizeBox = false;
             this.Name = "index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OpenPHP (1.1 version)";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Text = "OpenPHP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.index_FormClosing);
             this.Load += new System.EventHandler(this.index_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.ms_topMenu.ResumeLayout(false);
+            this.ms_topMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tb_caminho;
-        private System.Windows.Forms.Button bt_abrir;
-        private System.Windows.Forms.Button bt_limpar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem smi_arquivos;
-        private System.Windows.Forms.ToolStripMenuItem smi_select;
-        private System.Windows.Forms.ToolStripMenuItem smi_abrirCom;
+        private System.Windows.Forms.TextBox tb_path;
+        private System.Windows.Forms.Button bt_execute;
+        private System.Windows.Forms.Button bt_clear;
+        private System.Windows.Forms.MenuStrip ms_topMenu;
+        private System.Windows.Forms.ToolStripMenuItem smi_files;
+        private System.Windows.Forms.ToolStripMenuItem smi_selectFile;
+        private System.Windows.Forms.ToolStripMenuItem smi_openWith;
         private System.Windows.Forms.ToolStripMenuItem smi_notepad;
-        private System.Windows.Forms.ToolStripMenuItem smi_navegador;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smi_browser;
+        private System.Windows.Forms.Button bt_selectFile;
+        private System.Windows.Forms.ToolStripMenuItem smi_display;
         private System.Windows.Forms.ToolStripMenuItem smi_darkMode;
+        private System.Windows.Forms.ToolStripMenuItem smi_language;
+        private System.Windows.Forms.ToolStripMenuItem smi_ptBR;
+        private System.Windows.Forms.ToolStripMenuItem smi_enUSA;
+        private System.Windows.Forms.ToolStripMenuItem smi_light;
+        private System.Windows.Forms.ToolStripMenuItem smi_dark;
+        private System.Windows.Forms.Label version;
+        private System.Windows.Forms.ToolStripMenuItem smi_preferences;
+        private System.Windows.Forms.Label lb_localHost;
+        private System.Windows.Forms.Timer timer_localhost;
     }
 }
 
