@@ -49,16 +49,17 @@
             this.smi_enUSA = new System.Windows.Forms.ToolStripMenuItem();
             this.bt_selectFile = new System.Windows.Forms.Button();
             this.version = new System.Windows.Forms.Label();
-            this.lb_localHost = new System.Windows.Forms.Label();
+            this.lb_statusLH = new System.Windows.Forms.Label();
             this.timer_localhost = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.ms_topMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tb_path
             // 
-            this.tb_path.Location = new System.Drawing.Point(12, 30);
+            this.tb_path.Location = new System.Drawing.Point(12, 51);
             this.tb_path.Name = "tb_path";
-            this.tb_path.Size = new System.Drawing.Size(366, 20);
+            this.tb_path.Size = new System.Drawing.Size(645, 20);
             this.tb_path.TabIndex = 1;
             // 
             // bt_execute
@@ -66,7 +67,7 @@
             this.bt_execute.BackColor = System.Drawing.Color.DodgerBlue;
             this.bt_execute.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_execute.ForeColor = System.Drawing.Color.White;
-            this.bt_execute.Location = new System.Drawing.Point(12, 56);
+            this.bt_execute.Location = new System.Drawing.Point(12, 99);
             this.bt_execute.Name = "bt_execute";
             this.bt_execute.Size = new System.Drawing.Size(85, 23);
             this.bt_execute.TabIndex = 2;
@@ -79,7 +80,7 @@
             this.bt_clear.BackColor = System.Drawing.Color.DodgerBlue;
             this.bt_clear.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_clear.ForeColor = System.Drawing.Color.White;
-            this.bt_clear.Location = new System.Drawing.Point(103, 56);
+            this.bt_clear.Location = new System.Drawing.Point(103, 99);
             this.bt_clear.Name = "bt_clear";
             this.bt_clear.Size = new System.Drawing.Size(94, 23);
             this.bt_clear.TabIndex = 4;
@@ -89,14 +90,15 @@
             // 
             // ms_topMenu
             // 
+            this.ms_topMenu.BackColor = System.Drawing.SystemColors.Control;
             this.ms_topMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smi_files,
             this.smi_display});
             this.ms_topMenu.Location = new System.Drawing.Point(0, 0);
             this.ms_topMenu.Name = "ms_topMenu";
-            this.ms_topMenu.Size = new System.Drawing.Size(440, 24);
+            this.ms_topMenu.Size = new System.Drawing.Size(705, 24);
             this.ms_topMenu.TabIndex = 5;
-            this.ms_topMenu.Text = "menuStrip1";
+            this.ms_topMenu.Text = "ms_topMenu";
             // 
             // smi_files
             // 
@@ -109,7 +111,6 @@
             this.smi_files.Name = "smi_files";
             this.smi_files.Size = new System.Drawing.Size(66, 20);
             this.smi_files.Text = "Arquivos";
-            this.smi_files.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // smi_selectFile
             // 
@@ -126,7 +127,6 @@
             this.smi_openWith.Name = "smi_openWith";
             this.smi_openWith.Size = new System.Drawing.Size(180, 22);
             this.smi_openWith.Text = "Abrir com...";
-            this.smi_openWith.Click += new System.EventHandler(this.smi_openWith_Click);
             // 
             // smi_notepad
             // 
@@ -169,7 +169,6 @@
             this.smi_darkMode.Name = "smi_darkMode";
             this.smi_darkMode.Size = new System.Drawing.Size(189, 22);
             this.smi_darkMode.Text = "◐ Modo Escuro ";
-            this.smi_darkMode.Click += new System.EventHandler(this.smi_darkMode_Click);
             // 
             // smi_light
             // 
@@ -217,7 +216,7 @@
             this.bt_selectFile.BackColor = System.Drawing.Color.DodgerBlue;
             this.bt_selectFile.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_selectFile.ForeColor = System.Drawing.Color.White;
-            this.bt_selectFile.Location = new System.Drawing.Point(383, 30);
+            this.bt_selectFile.Location = new System.Drawing.Point(663, 51);
             this.bt_selectFile.Name = "bt_selectFile";
             this.bt_selectFile.Size = new System.Drawing.Size(38, 23);
             this.bt_selectFile.TabIndex = 6;
@@ -229,37 +228,48 @@
             // 
             this.version.AutoSize = true;
             this.version.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.version.Location = new System.Drawing.Point(349, 92);
+            this.version.Location = new System.Drawing.Point(614, 110);
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(91, 12);
             this.version.TabIndex = 7;
             this.version.Text = "version 1.0.0 (BETA)";
             // 
-            // lb_localHost
+            // lb_statusLH
             // 
-            this.lb_localHost.AutoSize = true;
-            this.lb_localHost.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_localHost.Location = new System.Drawing.Point(-2, 92);
-            this.lb_localHost.Name = "lb_localHost";
-            this.lb_localHost.Size = new System.Drawing.Size(50, 12);
-            this.lb_localHost.TabIndex = 8;
-            this.lb_localHost.Text = "Apache: ";
+            this.lb_statusLH.AutoSize = true;
+            this.lb_statusLH.BackColor = System.Drawing.Color.Transparent;
+            this.lb_statusLH.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_statusLH.ForeColor = System.Drawing.Color.Black;
+            this.lb_statusLH.Location = new System.Drawing.Point(12, 74);
+            this.lb_statusLH.Name = "lb_statusLH";
+            this.lb_statusLH.Size = new System.Drawing.Size(50, 12);
+            this.lb_statusLH.TabIndex = 8;
+            this.lb_statusLH.Text = "Apache: ";
             // 
             // timer_localhost
             // 
             this.timer_localhost.Tick += new System.EventHandler(this.timer_localhost_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(12, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(689, 18);
+            this.panel1.TabIndex = 9;
             // 
             // index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(440, 104);
-            this.Controls.Add(this.lb_localHost);
-            this.Controls.Add(this.version);
-            this.Controls.Add(this.bt_selectFile);
+            this.ClientSize = new System.Drawing.Size(705, 122);
             this.Controls.Add(this.bt_clear);
             this.Controls.Add(this.bt_execute);
+            this.Controls.Add(this.lb_statusLH);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.version);
+            this.Controls.Add(this.bt_selectFile);
             this.Controls.Add(this.tb_path);
             this.Controls.Add(this.ms_topMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -298,8 +308,9 @@
         private System.Windows.Forms.ToolStripMenuItem smi_dark;
         private System.Windows.Forms.Label version;
         private System.Windows.Forms.ToolStripMenuItem smi_preferences;
-        private System.Windows.Forms.Label lb_localHost;
+        private System.Windows.Forms.Label lb_statusLH;
         private System.Windows.Forms.Timer timer_localhost;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
