@@ -4,22 +4,24 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace openPHP
 {
     internal class Configs
     {
-        public static int fator_type, fator_mode, fator_language, fator_detect;
+        public static int fator_type, fator_mode, fator_detect;
         public static string collectAdress;
         public static string folderServer;
         public static string url;
         public static string pathSource = @"C:\laragon\www";
         public static OpenFileDialog openfile;
-        public static class openFile
+        public static class openFile 
         {
             public static void initializationManagerFiles()
             {
@@ -58,11 +60,23 @@ namespace openPHP
         }
         public static class front
         {
+            public static void whiteBoard()
+            {
+                ContextMenuStrip littleMenu = new ContextMenuStrip();
+                littleMenu.ImageScalingSize = new Size(25, 25);
+
+                ToolStripMenuItem newFile = new ToolStripMenuItem("Novo");
+                ToolStripMenuItem importFile = new ToolStripMenuItem("Importar Arquivo");
+                newFile.CheckOnClick = false;
+
+                littleMenu.Items.Add(newFile);
+                littleMenu.Show(Cursor.Position);
+            }
             public static void dark_mode(Control parent)
             { 
                 foreach (Control c in parent.Controls)
                 {
-                    if (c is Button btn)
+                    if (c is System.Windows.Forms.Button btn)
                     {
                         btn.BackColor = Color.FromArgb(37, 37, 38);
                         btn.ForeColor = Color.White;
@@ -99,7 +113,7 @@ namespace openPHP
             {
                 foreach (Control c in parent.Controls)
                 {
-                    if (c is Button btn)
+                    if (c is System.Windows.Forms.Button btn)
                     {
                         btn.BackColor = Color.DodgerBlue;
                         btn.ForeColor = Color.White;
@@ -131,6 +145,16 @@ namespace openPHP
                 }
             }
         }
+        public static class events
+        {
+            public static void mouseDetectRight(Object sender, MouseEventArgs e)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                   Configs.front.whiteBoard();
+                }
+            }
+        }
         public static class errorHandling
         {
             public static void localHostOffline()
@@ -144,15 +168,9 @@ namespace openPHP
             }
             public static void pathSourceNotFound()
             {
-                if (!Directory.Exists(pathSource) && fator_language == 0)
+                if (!Directory.Exists(pathSource))
                 {
                     MessageBox.Show("Atenção a pasta raiz (" + pathSource + ") não foi encontrado", "Erro #1",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (!Directory.Exists(pathSource) && fator_language == 1)
-                {
-                    MessageBox.Show("Warning the root folder (" + pathSource + ") not found", "Error #1",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }

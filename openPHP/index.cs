@@ -20,8 +20,8 @@ namespace openPHP
     {
         int fator_type = Configs.fator_type = 0;
         int fator_mode = Configs.fator_mode = 0;
-        int fator_language = Configs.fator_language = 0;
         int fator_detect = Configs.fator_detect = 0;
+        
 
         public index()
         {
@@ -100,50 +100,6 @@ namespace openPHP
             smi_light.Checked = false;
 
         }
-        private void smi_ptBR_Click(object sender, EventArgs e)
-        {
-            fator_language = 0;
-            if(fator_language == 0)
-            {
-                bt_execute.Text = "Executar";
-                bt_clear.Text = "Limpar";
-                smi_selectFile.Text = "Novo Arquivo";
-                smi_files.Text = "Arquivos";
-                smi_browser.Text = "Navegador";
-                smi_notepad.Text = "Bloco de notas";
-                smi_openWith.Text = "Abrir com...";
-                smi_display.Text = "Exibir";
-                smi_preferences.Text = "Preferências";
-                smi_darkMode.Text = "◐ Modo Escuro";
-                smi_dark.Text = "Escuro ⚫️";
-                smi_light.Text = "Claro ⚪";
-            }
-            smi_ptBR.Checked = true;
-            smi_enUSA.Checked = false;
-          
-        }
-
-        private void smi_enUSA_Click(object sender, EventArgs e)
-        {
-            fator_language = 1;
-            if (fator_language == 1)
-            {
-                bt_execute.Text = "Run";
-                bt_clear.Text = "Clear All";
-                smi_selectFile.Text = "New File";
-                smi_files.Text = "Files";
-                smi_browser.Text = "Browser";
-                smi_notepad.Text = "Notepad";
-                smi_openWith.Text = "Open With...";
-                smi_display.Text = "Display";
-                smi_preferences.Text = "Preferences";
-                smi_darkMode.Text = "◐ Dark Mode";
-                smi_dark.Text = "Dark ⚫️ ";
-                smi_light.Text = "Light ⚪";
-            }
-            smi_ptBR.Checked = false;
-            smi_enUSA.Checked = true;
-        }
         private void smi_preferences_Click(object sender, EventArgs e)
         {
             var openPreferences = new preferences();
@@ -166,16 +122,27 @@ namespace openPHP
                 lb_statusLH.ForeColor = Color.Red;
                 fator_detect = 1;
             }
+
         }
         private void index_Load(object sender, EventArgs e)
         {
-            
             timer_localhost.Interval = 1000;
             timer_localhost.Start();
            
         }
-        
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void pl_file_MouseClick(object sender, MouseEventArgs e)
+        {
+            Configs.events.mouseDetectRight(sender, e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
